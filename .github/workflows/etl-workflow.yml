@@ -32,4 +32,4 @@ jobs:
         API_KEY: ${{ secrets.API_KEY }}  # API key from GitHub secrets
         SECRET_KEY: ${{ secrets.SECRET_KEY }}  # Secret key from GitHub secrets
       run: |
-        python etl.py
+        python main.py
