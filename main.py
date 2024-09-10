@@ -1,6 +1,7 @@
 from pyxt.spot import Spot
 import pandas as pd
 import sqlalchemy
+import os
 
 # Fetch data from the API
 api_key = os.getenv("API_KEY")
