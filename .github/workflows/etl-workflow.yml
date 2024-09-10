@@ -33,3 +33,9 @@ jobs:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}  # Secret key from GitHub secrets
       run: |
         python main.py
+    # Step 5: Upload the database file as an artifact
+    - name: Upload database file
+      uses: actions/upload-artifact@v3
+      with:
+        name: btc-data
+        path: BTC_data.db
