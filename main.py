@@ -3,8 +3,8 @@ import pandas as pd
 import sqlalchemy
 
 # Fetch data from the API
-api_key = "7b5c9acc-a2f2-4859-a19c-135334ac8a33"
-secret_key = "24b148e26fd42dd4ac8df125aa88420db1338991"
+api_key = os.getenv("API_KEY")
+secret_key = os.getenv("SECRET_KEY")
 xt = Spot(host="https://sapi.xt.com", access_key=api_key, secret_key=secret_key)
 responseData = xt.get_kline(symbol='btc_usdt', interval="1d")
 
