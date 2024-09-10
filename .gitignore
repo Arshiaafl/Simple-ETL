@@ -1,0 +1,27 @@
+# Ignore Python bytecode and cache
+__pycache__/
+*.pyc
+
+# Ignore virtual environment directories
+venv/
+env/
+DE/
+
+# Ignore SQLite database files
+*.db
+*.csv
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore logs
+*.log
+
+# Ignore environment variable files (e.g., secrets)
+.env
+
+# Ignore GitHub Actions cache
+.github/workflows/*.cache
+
+# Ignore VSCode settings (if you're using VSCode)
+.vscode/
