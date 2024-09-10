@@ -1,0 +1,35 @@
+name: ETL Workflow for BTC Data
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Runs at 12:00 AM UTC every day (adjust this as per your need)
+  workflow_dispatch:  # Allows manual triggering of the workflow
+
+jobs:
+  run-etl:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the repository
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    # Step 2: Set up Python
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'  # Specify the version of Python you want to use
+
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests pandas sqlalchemy pyxt  # Ensure the pyxt library is installed
+
+    # Step 4: Run the ETL script with environment secrets
+    - name: Run ETL script
+      env:
+        API_KEY: ${{ secrets.API_KEY }}  # API key from GitHub secrets
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}  # Secret key from GitHub secrets
+      run: |
+        python etl.py
