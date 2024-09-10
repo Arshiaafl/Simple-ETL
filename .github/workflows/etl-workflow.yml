@@ -2,7 +2,7 @@ name: ETL Workflow for BTC Data
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs at 12:00 AM UTC every day (adjust this as per your need)
+    - cron: "0 0 * * *"  # Runs at 12:00 AM UTC every day (adjust this as needed)
   workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
